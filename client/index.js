@@ -1,12 +1,12 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-import Header from 'components/Header';
+import Loader from 'components/Loader';
 
 import 'index.html';
 import 'systemjs.config';
 
 ReactDOM.render(
-  <Header/>,
+  <Loader package="component3-package1" component="DropDown"/>,
   document.getElementById('root')
 );
