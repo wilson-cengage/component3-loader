@@ -15,9 +15,6 @@ gulp.task('prebuild', function(packageName) {
 
         gulp.src([`node_modules/component3-package2/dist/**`])
             .pipe(gulp.dest(`components/component3-package2/`));
-
-        gulp.src([`node_modules/component2a/dist/component2a/**`])
-            .pipe(gulp.dest(`components/component2a/`));
     });
 });
 
@@ -25,8 +22,13 @@ gulp.task('prebuild', function(packageName) {
 gulp.task('postbuild', function(packageName) {
 
     console.log(`gulp postbuild packageName: ${packageName}`);
-    // place code for your default task here
+
+
+    // copy react adapters over
+    gulp.src([`client/*adapter.js`]).pipe(gulp.dest(`static`));
+
 
     gulp.src([`static/${packageName}/**`]).pipe(gulp.dest(`dist`));
+
 
 });

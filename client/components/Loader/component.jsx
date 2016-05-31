@@ -19,10 +19,6 @@ export default class Loader extends React.Component {
     componentDidMount() {
         // dynamically load component3-package
         SystemJS.import(this.props.package).then(module => {
-
-            debugger;
-            console.log(this.props);
-            console.log(module);
            this.setState({
                childComponent: module[this.props.component]
            });
