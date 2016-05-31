@@ -4,12 +4,14 @@ const path = require('path');
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isProd = nodeEnv === 'production';
 
+const packageName = 'component3-loader';
+
 module.exports = {
   devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
   context: path.join(__dirname, './client'),
   entry: {
     index: './index.js',
-    'component2/component2': './exports.js'
+    [`${packageName}/${packageName}`]: './exports.js'
   },
   output: {
     path: path.join(__dirname, './static'),

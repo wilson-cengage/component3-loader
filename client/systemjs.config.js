@@ -4,9 +4,8 @@
 
 SystemJS.config({
     map: {
-        'React': '../node_modules/react/dist/react-with-addons.min.js',
-        'ReactDOM': '../node_modules/react-dom/dist/react-dom.min.js',
-        'component3-package1': '/static/component3-package1/component3-package1.js',
-        'component3-package2': '/static/component3-package2/component3-package2.js'
+        'component2a': '/components/component2a/component2a.js',
+        'component3-package1': '/components/component3-package1/component3-package1.js',
+        'component3-package2': '/components/component3-package2/component3-package2.js'
     }
 });

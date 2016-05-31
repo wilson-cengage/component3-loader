@@ -1,5 +1,4 @@
-import React from 'react';
-import _ from 'lodash';
+import React, { PropTypes } from 'react';
 
 import './style.css';
 
@@ -19,22 +18,25 @@ export default class Loader extends React.Component {
 
     componentDidMount() {
         // dynamically load component3-package
-        SystemJS.import(this.props.package).then(package => {
+        SystemJS.import(this.props.package).then(module => {
+
+            debugger;
+            console.log(this.props);
+            console.log(module);
            this.setState({
-               childComponent: package[this.props.component]
+               childComponent: module[this.props.component]
            });
         });
     }
 
     render() {
-        const value = _.take([3, 2, 1])[0];
         let childContent = null;
         if (this.state.childComponent != null) {
             childContent = <this.state.childComponent/>;
         }
         return (
             <div>
-                <div className="loader">Component {value} Loader - cas-loader</div>
+                <div className="loader">Component3 Loader - cas-loader</div>
                 <div>{childContent}</div>
             </div>
         );
