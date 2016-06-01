@@ -1,6 +1,6 @@
 {
   "name": "component3-loader",
-  "version": "0.0.6",
+  "version": "0.0.10",
   "private": true,
   "description": "Component Sample - React, Webpack 2",
   "main": "dist/component3-loader.js",
@@ -29,8 +29,8 @@
   },
   "dependencies": {
     "babel-runtime": "^6.6.1",
-    "component3-package1": "git+https://github.com/wilson-cengage/component3-package1.git#0.0.6",
-    "component3-package2": "git+https://github.com/wilson-cengage/component3-package2.git#0.0.6",
+    "component3-package1": "git+https://github.com/wilson-cengage/component3-package1.git#0.0.10",
+    "component3-package2": "git+https://github.com/wilson-cengage/component3-package2.git#0.0.10",
     "es6-promise": "^3.1.2",
     "react": "^15.0.0-rc.1",
     "react-dom": "^15.0.0-rc.1",
