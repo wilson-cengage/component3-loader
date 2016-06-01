@@ -1,6 +1,6 @@
 {
   "name": "component3-loader",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "private": true,
   "description": "Component Sample - React, Webpack 2",
   "main": "dist/component3-loader.js",

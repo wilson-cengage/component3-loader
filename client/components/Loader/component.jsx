@@ -32,7 +32,7 @@ export default class Loader extends React.Component {
         }
         return (
             <div>
-                <div className="loader">Component3 Loader - cas-loader</div>
+                <div className="loader">Loading {this.props.package}/{this.props.component}...</div>
                 <div>{childContent}</div>
             </div>
         );
