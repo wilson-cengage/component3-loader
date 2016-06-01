@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ComponentRegistry from 'component-registry/client/app/ComponentRegistry';
 
 import './style.css';
 
@@ -8,20 +9,21 @@ export default class Loader extends React.Component {
         package: PropTypes.string.isRequired,
         component: PropTypes.string.isRequired
     };
-    
+
     constructor(props) {
         super(props);
         this.state = {
             childComponent: null
         }
+        this.componentRegistry = new ComponentRegistry();
     }
 
     componentDidMount() {
         // dynamically load component3-package
-        SystemJS.import(this.props.package).then(module => {
-           this.setState({
-               childComponent: module[this.props.component]
-           });
+        this.componentRegistry.load(this.props.package, this.props.component, (loadedComponent) => {
+            this.setState({
+                childComponent: loadedComponent
+            });
         });
     }
 
