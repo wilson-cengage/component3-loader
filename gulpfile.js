@@ -7,7 +7,7 @@ gulp.task('prebuild', function(packageName) {
     del([
         'dist',
         'components',
-        'static'
+        'build'
     ]).then(paths => {
         // component-registry localhost setup
         gulp.src([`node_modules/component-registry/client/__adapters/**`])
@@ -27,7 +27,5 @@ gulp.task('postbuild', function(packageName) {
 
     console.log(`gulp postbuild packageName: ${packageName}`);
 
-    gulp.src([`static/${packageName}/**`]).pipe(gulp.dest(`dist`));
-
-
+    gulp.src([`build/${packageName}/**`]).pipe(gulp.dest(`dist`));
 });
